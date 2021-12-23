@@ -50,7 +50,6 @@ class CharacterDetailFragment : Fragment() {
                             species.text = data.species
                             url.text = data.url
                             created.text = data.created
-                            location.text = data.location.toString()
                         }
                     }
                 }
