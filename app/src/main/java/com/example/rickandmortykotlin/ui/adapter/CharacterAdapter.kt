@@ -2,6 +2,7 @@ package com.example.rickandmortykotlin.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -9,7 +10,9 @@ import com.example.rickandmortykotlin.common.base.BaseComparator
 import com.example.rickandmortykotlin.data.network.dto.character.CharacterDto
 import com.example.rickandmortykotlin.databinding.CharacterItemBinding
 
-class CharacterAdapter : PagingDataAdapter<CharacterDto, CharacterAdapter.CharacterViewHolder>(
+class CharacterAdapter(
+    private val onItemClick: (id: Int) -> Unit,
+) : PagingDataAdapter<CharacterDto, CharacterAdapter.CharacterViewHolder>(
     BaseComparator()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
@@ -24,11 +27,19 @@ class CharacterAdapter : PagingDataAdapter<CharacterDto, CharacterAdapter.Charac
         }
     }
 
-    class CharacterViewHolder(
-        private val binding: CharacterItemBinding
+    inner class CharacterViewHolder(
+        private val binding: CharacterItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            binding.root.setOnClickListener{
+                getItem(absoluteAdapterPosition)?.let {
+                    onItemClick(it.id)
+                }
+            }
+        }
         fun onBind(item: CharacterDto) = with(binding) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             titleIm.load(item.image)
             characterName.text = item.name
         }

@@ -6,7 +6,6 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortykotlin.common.base.BaseComparator
 import com.example.rickandmortykotlin.data.network.dto.location.LocationDto
-import com.example.rickandmortykotlin.databinding.CharacterItemBinding
 import com.example.rickandmortykotlin.databinding.LocationItemBinding
 
 class LocationAdapter : PagingDataAdapter<LocationDto, LocationAdapter.LocationViewHolder>(
@@ -29,8 +28,11 @@ class LocationAdapter : PagingDataAdapter<LocationDto, LocationAdapter.LocationV
     class LocationViewHolder(
         private val binding: LocationItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
         fun onBind(item: LocationDto) = with(binding) {
-            locationName.text = item.name
+            name.text = item.name
+            type.text = item.type
+            localed.text = item.dimension
         }
     }
 }

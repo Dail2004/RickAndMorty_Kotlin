@@ -7,7 +7,7 @@ import com.example.rickandmortykotlin.data.network.dto.RickAndMortyResponse
 import retrofit2.HttpException
 import java.io.IOException
 
-open class BasePagingSource<T : Any>(
+open class BasePagingSource<T : Any, U>(
     private val request: suspend (position: Int) -> RickAndMortyResponse<T>
 ) : PagingSource<Int, T>() {
     override fun getRefreshKey(state: PagingState<Int, T>): Int? {

@@ -10,11 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.rickandmortykotlin.databinding.FragmentCharacterBinding
 import com.example.rickandmortykotlin.databinding.FragmentEpisodeBinding
-import com.example.rickandmortykotlin.ui.adapter.CharacterAdapter
 import com.example.rickandmortykotlin.ui.adapter.EpisodeAdapter
-import com.example.rickandmortykotlin.ui.fragment.character.CharacterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

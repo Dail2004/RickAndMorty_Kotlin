@@ -6,6 +6,6 @@ import com.example.rickandmortykotlin.data.network.dto.character.CharacterDto
 
 class CharacterPagingSource (
     private val service: CharacterApiService
-) : BasePagingSource<CharacterDto>({ position ->
+) : BasePagingSource<CharacterDto, Any?>({ position ->
     service.fetchCharacters(position)
 })

@@ -31,6 +31,8 @@ class EpisodeAdapter : PagingDataAdapter<EpisodeDto, EpisodeAdapter.EpisodeViewH
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: EpisodeDto) = with(binding) {
             episodeName.text = item.name
+            airDate.text = item.air_date
+            episode.text = item.episode
         }
     }
 }

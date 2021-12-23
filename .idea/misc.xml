@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/blure.xml" value="0.1548494983277592" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/ic_portal_background.xml" value="0.1548494983277592" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/ic_portal_foreground.xml" value="0.1548494983277592" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/activity_main.xml" value="0.14" />
-        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/character_item.xml" value="0.14" />
-        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_character.xml" value="0.15" />
-        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_character_detail.xml" value="0.22153846153846155" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/character_item.xml" value="0.4093816631130064" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/episode_item.xml" value="0.14594594594594595" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_character.xml" value="0.25" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_character_detail.xml" value="0.15" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_episode.xml" value="0.14448160535117058" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_location.xml" value="0.10347222222222222" />
-        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/item_load_state_footer_view.xml" value="0.15" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/item_load_state_footer_view.xml" value="0.12" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/location_item.xml" value="0.14594594594594595" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/swipe_refresh_layout.xml" value="0.14448160535117058" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22153846153846155" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/menu/menu_refresh.xml" value="0.14448160535117058" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1548494983277592" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1548494983277592" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/mipmap-anydpi-v26/ic_portal.xml" value="0.1548494983277592" />
       </map>
     </option>
   </component>

@@ -8,23 +8,26 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.rickandmortykotlin.databinding.FragmentCharacterBinding
 import com.example.rickandmortykotlin.ui.adapter.CharacterAdapter
+import com.example.rickandmortykotlin.ui.adapter.paging.LoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CharacterFragment : Fragment() {
+class CharacterFragment() : Fragment() {
     private val viewModel: CharacterViewModel by viewModels()
     private lateinit var binding: FragmentCharacterBinding
-    private val characterAdapter = CharacterAdapter()
+    private val characterAdapter = CharacterAdapter(this::onItemClickRecyclerItem)
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentCharacterBinding.inflate(inflater, container, false)
         return binding.root
@@ -41,17 +44,19 @@ class CharacterFragment : Fragment() {
     }
 
     private fun setupCharacterRecycler() = with(binding) {
-        recyclerView.layoutManager = LinearLayoutManager(requireActivity())
-        recyclerView.adapter = characterAdapter.withLoadStateFooter(
-            com.example.rickandmortykotlin.ui.adapter.paging.LoadStateAdapter {
+        recyclerView.layoutManager =
+            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
+        recyclerView.adapter = characterAdapter.withLoadStateFooter(LoadStateAdapter {
                 characterAdapter.retry()
             }
         )
 
+
+
         characterAdapter.addLoadStateListener { loadStates ->
             recyclerView.isVisible = loadStates.refresh is LoadState.NotLoading
         }
-
 
         swipeRefresh.setOnRefreshListener {
             characterAdapter.retry()
@@ -66,5 +71,11 @@ class CharacterFragment : Fragment() {
                 characterAdapter.submitData(it)
             }
         })
+    }
+
+    private fun onItemClickRecyclerItem(id: Int) {
+        findNavController().navigate(
+            CharacterFragmentDirections
+                .actionCharacterFragmentToCharacterDetailFragment(id))
     }
 }
