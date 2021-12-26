@@ -17,7 +17,8 @@ class CharacterAdapter(
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         return CharacterViewHolder(
-            CharacterItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            CharacterItemBinding.inflate(LayoutInflater.from(parent.context),
+                parent, false)
         )
     }
 
@@ -32,14 +33,13 @@ class CharacterAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         init {
-            binding.root.setOnClickListener{
+            itemView.setOnClickListener{
                 getItem(absoluteAdapterPosition)?.let {
                     onItemClick(it.id)
                 }
             }
         }
         fun onBind(item: CharacterDto) = with(binding) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             titleIm.load(item.image)
             characterName.text = item.name
         }

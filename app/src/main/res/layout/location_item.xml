@@ -6,12 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp"
     android:background="@color/black"
-    app:cardCornerRadius="15dp">
+    app:cardCornerRadius="50dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black">
+        android:background="@drawable/backround_portal">
+
         <TextView
             android:id="@+id/location_name"
             android:layout_width="wrap_content"
@@ -22,6 +23,7 @@
             android:textColorHint="@color/gray"
             android:textSize="18dp"
             app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginHorizontal="30dp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -31,8 +33,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             tools:text="@tools:sample/first_names"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="24dp"
+            android:layout_marginHorizontal="35dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/location_name"/>
 
@@ -45,6 +48,7 @@
             android:hint="Type:"
             android:textColorHint="@color/gray"
             android:textSize="18dp"
+            android:layout_marginHorizontal="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name"/>
 
@@ -55,7 +59,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             tools:text="@tools:sample/first_names"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="30dp"
             android:textSize="24dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/type_hint"/>
@@ -65,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginHorizontal="35dp"
             android:layout_marginTop="10dp"
             android:hint="Dimension in which the location is location:"
             android:textColorHint="@color/gray"
@@ -76,13 +82,13 @@
             android:id="@+id/localed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            tools:text="@tools:sample/first_names"
-            android:textColor="@color/white"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
             android:textSize="24dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/located_is_located"/>
+            app:layout_constraintTop_toBottomOf="@id/located_is_located"
+            tools:text="@tools:sample/first_names" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

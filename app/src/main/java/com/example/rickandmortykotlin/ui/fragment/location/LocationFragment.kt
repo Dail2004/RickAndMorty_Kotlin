@@ -8,10 +8,12 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmortykotlin.databinding.FragmentLocationBinding
 import com.example.rickandmortykotlin.ui.adapter.LocationAdapter
+import com.example.rickandmortykotlin.ui.fragment.episode.EpisodeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -19,7 +21,7 @@ import kotlinx.coroutines.launch
 class LocationFragment : Fragment() {
     private val viewModel: LocationViewModel by viewModels()
     private lateinit var binding: FragmentLocationBinding
-    private val locationAdapter = LocationAdapter()
+    private val locationAdapter = LocationAdapter(this::onItemClickRecyclerItem)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,5 +66,10 @@ class LocationFragment : Fragment() {
                 locationAdapter.submitData(it)
             }
         })
+    }
+    private fun onItemClickRecyclerItem(id: Int){
+        findNavController().navigate(
+            LocationFragmentDirections.actionLocationFragmentToLocationDetailFragment(id)
+        )
     }
 }

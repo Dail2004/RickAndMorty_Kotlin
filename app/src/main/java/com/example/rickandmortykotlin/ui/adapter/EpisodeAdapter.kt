@@ -8,15 +8,11 @@ import com.example.rickandmortykotlin.common.base.BaseComparator
 import com.example.rickandmortykotlin.data.network.dto.episode.EpisodeDto
 import com.example.rickandmortykotlin.databinding.EpisodeItemBinding
 
-class EpisodeAdapter : PagingDataAdapter<EpisodeDto, EpisodeAdapter.EpisodeViewHolder>(
+class EpisodeAdapter(
+    private val onItemClick: (id: Int) -> Unit,
+) : PagingDataAdapter<EpisodeDto, EpisodeAdapter.EpisodeViewHolder>(
     BaseComparator()
 ) {
-
-    override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
-        getItem(position)?.let {
-            holder.onBind(it)
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder {
         return EpisodeViewHolder(
@@ -26,9 +22,25 @@ class EpisodeAdapter : PagingDataAdapter<EpisodeDto, EpisodeAdapter.EpisodeViewH
         )
     }
 
-    class EpisodeViewHolder(
-        private val binding: EpisodeItemBinding
+    override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
+        getItem(position)?.let {
+            holder.onBind(it)
+        }
+    }
+
+    inner class EpisodeViewHolder(
+        private val binding: EpisodeItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let {
+                    onItemClick(it.id)
+                }
+            }
+        }
+
+
         fun onBind(item: EpisodeDto) = with(binding) {
             episodeName.text = item.name
             airDate.text = item.air_date

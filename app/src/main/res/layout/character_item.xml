@@ -34,14 +34,15 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/get_schwifty"
         android:gravity="center"
-        android:textColor="@color/design_default_color_on_surface"
         android:shadowColor="@color/white"
-        android:shadowDx="10"
-        android:shadowDy="10"
-        android:shadowRadius="5"
-        android:textStyle="bold"
+        android:shadowDx="-5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
+        android:textColor="@color/design_default_color_on_surface"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/title_im"
+        tools:layout_editor_absoluteX="0dp"
         tools:text="@tools:sample/full_names" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

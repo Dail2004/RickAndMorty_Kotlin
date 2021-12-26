@@ -8,7 +8,9 @@ import com.example.rickandmortykotlin.common.base.BaseComparator
 import com.example.rickandmortykotlin.data.network.dto.location.LocationDto
 import com.example.rickandmortykotlin.databinding.LocationItemBinding
 
-class LocationAdapter : PagingDataAdapter<LocationDto, LocationAdapter.LocationViewHolder>(
+class LocationAdapter(
+    private val onItemClick: (id: Int) -> Unit,
+) : PagingDataAdapter<LocationDto, LocationAdapter.LocationViewHolder>(
     BaseComparator()
 ) {
 
@@ -25,9 +27,17 @@ class LocationAdapter : PagingDataAdapter<LocationDto, LocationAdapter.LocationV
         }
     }
 
-    class LocationViewHolder(
+    inner class LocationViewHolder(
         private val binding: LocationItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let {
+                    onItemClick(it.id)
+                }
+            }
+        }
 
         fun onBind(item: LocationDto) = with(binding) {
             name.text = item.name

@@ -46,9 +46,9 @@
         android:fontFamily="@font/get_schwifty"
         android:gravity="center"
         android:shadowColor="@color/text_shadow_white"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
+        android:shadowDx="-10"
+        android:shadowDy="10"
+        android:shadowRadius="10"
         android:textColor="@color/design_default_color_on_surface"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -60,7 +60,7 @@
     <LinearLayout
         android:id="@+id/status"
         android:layout_width="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +73,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="5dp"
+            android:shadowColor="#36AA1C"
+            android:shadowDx="-10"
+            android:shadowDy="10"
+            android:shadowRadius="10"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -83,6 +87,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text=" - "
+            android:shadowColor="@color/text_shadow_white"
+            android:shadowDx="-10"
+            android:shadowDy="10"
+            android:shadowRadius="10"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -91,6 +99,10 @@
             android:id="@+id/species"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:shadowColor="#36AA1C"
+            android:shadowDx="-10"
+            android:shadowDy="10"
+            android:shadowRadius="10"
             android:layout_marginTop="5dp"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -100,14 +112,18 @@
 
     <TextView
         android:id="@+id/url"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_marginVertical="8dp"
+        android:shadowColor="#36AA1C"
+        android:shadowDx="-10"
+        android:shadowDy="10"
+        android:shadowRadius="10"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/status"
+        app:layout_constraintTop_toBottomOf="@+id/created"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@tools:sample/full_names" />
@@ -115,7 +131,7 @@
     <TextView
         android:layout_marginVertical="8dp"
         android:id="@+id/created"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/black"
@@ -124,19 +140,20 @@
         tools:text="@tools:sample/full_names"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/url" />
+        app:layout_constraintTop_toBottomOf="@+id/status" />
 
     <TextView
         android:id="@+id/location"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/created"
-        tools:text="Earth (C-137)" />
+        app:layout_constraintTop_toBottomOf="@+id/url"
+        tools:text="Earth (C-137)"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
