@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.rickandmortykotlin.common.resource.Resource
 import com.example.rickandmortykotlin.databinding.FragmentEpisodeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class EpisodeDetailFragment : Fragment() {
@@ -30,10 +33,16 @@ class EpisodeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
+        setupObservers()
     }
 
-    private fun initialize() = with(binding) {
-        viewModel.fetchEpisode(args.id).observe(viewLifecycleOwner, {
+    private fun initialize() {
+        viewModel.fetchEpisode(args.id)
+    }
+
+    private fun setupObservers() = with(binding) {
+        lifecycleScope.launch {
+            viewModel.episodeState.collect {
                 when (it) {
                     is Resource.Error -> {
                         Toast.makeText(requireActivity(), it.massage, Toast.LENGTH_SHORT).show()
@@ -51,6 +60,7 @@ class EpisodeDetailFragment : Fragment() {
                         }
                     }
                 }
-            })
+            }
+        }
     }
 }

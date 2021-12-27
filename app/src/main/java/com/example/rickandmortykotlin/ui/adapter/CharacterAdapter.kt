@@ -2,7 +2,6 @@ package com.example.rickandmortykotlin.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load

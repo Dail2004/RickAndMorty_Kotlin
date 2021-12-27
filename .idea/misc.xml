@@ -8,11 +8,14 @@
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1548494983277592" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/ic_portal_background.xml" value="0.1548494983277592" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/ic_portal_foreground.xml" value="0.1548494983277592" />
-        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/activity_main.xml" value="0.14" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/shape.xml" value="0.1527777777777778" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/shape_green.xml" value="0.1527777777777778" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/drawable/shape_white.xml" value="0.1527777777777778" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/character_item.xml" value="0.4093816631130064" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/episode_item.xml" value="0.14594594594594595" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_character.xml" value="0.25" />
-        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_character_detail.xml" value="0.18" />
+        <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_character_detail.xml" value="0.25" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_episode.xml" value="0.14448160535117058" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_episode_detail.xml" value="0.16" />
         <entry key="..\:/Users/RickAndMortyKotlin2/app/src/main/res/layout/fragment_location.xml" value="0.10347222222222222" />
