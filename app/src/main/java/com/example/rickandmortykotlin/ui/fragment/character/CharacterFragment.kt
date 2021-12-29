@@ -8,7 +8,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -61,7 +60,6 @@ class CharacterFragment() : Fragment() {
         swipeRefresh.setOnRefreshListener {
             characterAdapter.retry()
             swipeRefresh.isRefreshing = false
-            setupRequests()
         }
     }
 
