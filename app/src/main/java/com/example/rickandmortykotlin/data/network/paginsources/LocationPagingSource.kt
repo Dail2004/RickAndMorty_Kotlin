@@ -6,6 +6,6 @@ import com.example.rickandmortykotlin.data.network.dto.location.LocationDto
 
 class LocationPagingSource(
     private val service: LocationApiService
-) : BasePagingSource<LocationDto, Any?>({ position ->
+) : BasePagingSource<LocationDto>({ position ->
     service.fetchLocations(position)
 })

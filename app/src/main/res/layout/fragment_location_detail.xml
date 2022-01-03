@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.fragment.location.detailLocation.LocationDetailFragment">
+    tools:context=".presentation.ui.fragment.location.detailLocation.LocationDetailFragment">
 
     <LinearLayout
         android:layout_width="500dp"

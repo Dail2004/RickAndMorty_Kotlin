@@ -6,6 +6,6 @@ import com.example.rickandmortykotlin.data.network.dto.episode.EpisodeDto
 
 class EpisodePagingSource(
     private val service: EpisodeApiService
-) : BasePagingSource<EpisodeDto, Any?>({ position ->
+) : BasePagingSource<EpisodeDto>({ position ->
     service.fetchEpisodes(position)
 })

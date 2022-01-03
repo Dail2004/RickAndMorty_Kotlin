@@ -7,15 +7,9 @@ import com.example.rickandmortykotlin.data.network.dto.RickAndMortyResponse
 import retrofit2.HttpException
 import java.io.IOException
 
-open class BasePagingSource<T : Any, U>(
-    private val request: suspend (position: Int) -> RickAndMortyResponse<T>
+abstract class BasePagingSource<T : Any>(
+    private val request: suspend (position: Int) -> RickAndMortyResponse<T>,
 ) : PagingSource<Int, T>() {
-    override fun getRefreshKey(state: PagingState<Int, T>): Int? {
-        return state.anchorPosition?.let { anchorPosition ->
-            val anchorPage = state.closestPageToPosition(anchorPosition)
-            anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
-        }
-    }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, T> {
         val position = params.key ?: 1
@@ -41,4 +35,10 @@ open class BasePagingSource<T : Any, U>(
         }
     }
 
+    override fun getRefreshKey(state: PagingState<Int, T>): Int? {
+        return state.anchorPosition?.let { anchorPosition ->
+            val anchorPage = state.closestPageToPosition(anchorPosition)
+            anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
+        }
+    }
 }

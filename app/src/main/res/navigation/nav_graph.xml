@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.example.rickandmortykotlin.ui.fragment.character.CharacterFragment"
+        android:name="com.example.rickandmortykotlin.presentation.ui.fragment.character.CharacterFragment"
         android:label="Character"
         tools:layout="@layout/fragment_character">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.example.rickandmortykotlin.ui.fragment.character.datailCharacter.CharacterDetailFragment"
+        android:name="com.example.rickandmortykotlin.presentation.ui.fragment.character.datailCharacter.CharacterDetailFragment"
         android:label="Character Detail"
         tools:layout="@layout/fragment_character_detail" >
         <argument
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/episodeFragment"
-        android:name="com.example.rickandmortykotlin.ui.fragment.episode.EpisodeFragment"
+        android:name="com.example.rickandmortykotlin.presentation.ui.fragment.episode.EpisodeFragment"
         android:label="Episode"
         tools:layout="@layout/fragment_episode" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/locationFragment"
-        android:name="com.example.rickandmortykotlin.ui.fragment.location.LocationFragment"
+        android:name="com.example.rickandmortykotlin.presentation.ui.fragment.location.LocationFragment"
         android:label="Location"
         tools:layout="@layout/fragment_location" >
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/episodeDetailFragment"
-        android:name="com.example.rickandmortykotlin.ui.fragment.episode.detailEpisode.EpisodeDetailFragment"
+        android:name="com.example.rickandmortykotlin.presentation.ui.fragment.episode.detailEpisode.EpisodeDetailFragment"
         android:label="fragment_episode_detail"
         tools:layout="@layout/fragment_episode_detail" >
         <argument
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/locationDetailFragment"
-        android:name="com.example.rickandmortykotlin.ui.fragment.location.detailLocation.LocationDetailFragment"
+        android:name="com.example.rickandmortykotlin.presentation.ui.fragment.location.detailLocation.LocationDetailFragment"
         android:label="fragment_location_detail"
         tools:layout="@layout/fragment_location_detail" >
         <argument
